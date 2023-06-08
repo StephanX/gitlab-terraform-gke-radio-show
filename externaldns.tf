@@ -27,7 +27,7 @@ resource "helm_release" "external-dns" {
   }
   set {
     name = "policy"
-    value = "sync"
+    value = "upsert-only"
   }
   set {
     name = "provider"

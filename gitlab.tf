@@ -1,8 +1,8 @@
 module "gke-gitlab" {
   source                      = "git::https://github.com/StephanX/terraform-google-gke-gitlab"
   allow_force_destroy         = true
-  certmanager_email           = "user@example.net" # your email from certmanager
-  domain                      = "example.org" # the _root_ domain; gitlab will create 'gitlab.example.org' and 'registry.example.org' subdomains
+  certmanager_email           = "stephan@stephanx.net"
+  domain                      = var.domain # the _root_ domain; gitlab will create 'gitlab' and 'registry' subdomains
   gitlab_deletion_protection  = false
   gitlab_runner_install       = false
   # gke_version                 = "1.25"
@@ -22,7 +22,7 @@ module "gke-gitlab" {
 #   # runner_image              = var.runner_image
 #   create_namespace          = true
 #   namespace                 = "gitlab-runner"
-#   gitlab_url                = "https://gitlab.gitlab.ragnar.sh/"
+#   gitlab_url                = "https://gitlab.${var.domain}/"
 
 #   # Pass annotations to service account. This can be for workload/pod/ identity
 #   service_account_annotations = {
