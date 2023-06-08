@@ -46,13 +46,5 @@ terraform {
       source = "digitalocean/digitalocean"
       version = ">= 2.28.1"
     }
-    aws = {
-      source = "hashicorp/aws"
-      version = ">= 5.1.0"
-    }
-    tls = {
-      source  = "hashicorp/tls"
-      version = ">= 4.0"
-    }
   }
 }
